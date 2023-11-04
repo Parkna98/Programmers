@@ -1,18 +1,17 @@
 class Solution {
     public String solution(String s, int n) {
-        StringBuilder answer = new StringBuilder();
+        String answer = "";
         for(char c:s.toCharArray()){
-            answer.append(push(c,n));
+            answer+=push(c,n);
         }
-        
-        return answer.toString();
+        return answer;
     }
-    
     private char push(char c, int n){
         if(!Character.isAlphabetic(c)) return c;
-        char offset = Character.isUpperCase(c)?'A':'a';
-        int position = c-offset;
-        position = (position + n)%26;
-        return (char)(offset+position);
+        char offset=(Character.isUpperCase(c))?'A':'a';
+        int position=c-offset;
+        position=(position+n)%26;
+        char result=(char)(position+offset);
+        return result;
     }
 }
