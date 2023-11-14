@@ -1,8 +1,9 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 class Solution {
     private static final char[] CHARS="AEIOU".toCharArray();
     
-    private void generate(String word, List<String> words){
+    private void generate(String word,List<String> words){
         words.add(word);
         
         if(word.length()==5) return;
